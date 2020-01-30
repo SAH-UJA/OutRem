@@ -1,5 +1,5 @@
 import pandas as pd
-class OR:
+class OutRem:
 	def __init__(self,filename,header=None):
 		self.data = pd.read_csv(filename,header=header)
 		self.head = self.data.iloc[0,:].values
@@ -38,4 +38,3 @@ class OR:
 		self.d = pd.DataFrame(self.d,columns=self.head)
 		self.d = self.d.drop(self.outlier_tuples)
 		self.d.to_csv(outfilename,index=False)
-		print(set(self.outlier_tuples))
